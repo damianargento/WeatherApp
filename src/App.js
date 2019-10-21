@@ -33,13 +33,13 @@ handleChange = event => {
 		const { isLoading } = this.state;
 		return (
 				isLoading ? <div>Cargando...</div> : 
-				<div className="container">
+		<div style={{marginTop:'35px'}} className="container">
           <div className="row">
-            <div className="col-md-6 col-xs-12">
-              <div><img src={current.weather_icons} alt=""/></div>
-              <div>{ubicacion.name}</div>
-              <div>{current.temperature} °C</div>
-            </div>
+            <div className="col-md-6 col-xs-12" align="right">
+              <div><img style={{borderRadius:'15px'}} src={current.weather_icons} alt=""/></div>
+			  <div style={{fontSize:'30px',color:'#048587', fontWeight:700, margin:'5px 0 -10px 0'}}>{current.temperature}°C</div>
+              <div style={{fontSize:'13px',color:'#470000', fontWeight:200}}>{ubicacion.name}</div>
+             </div>
             <div className="col-md-6 col-xs-12 form-fields" align="left">
               <input value={this.state.userQuery} className="form-control search" onChange={this.handleChange}></input>
               <button className="btn btn-success" onClick={this.search}>Search</button>
